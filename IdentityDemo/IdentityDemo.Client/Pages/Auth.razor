@@ -1,0 +1,16 @@
+﻿@page "/auth"
+
+@using IdentityDemo.Client.Authentication
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<PageTitle>Auth</PageTitle>
+
+<h1>You are authenticated</h1>
+
+<AuthorizeView>
+    Hello @context.User.Identity?.Name!
+    @context.User.GetFullName()
+</AuthorizeView>
